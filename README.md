@@ -55,12 +55,3 @@ Namdhari Foods is a simple Android application that displays a list of starters 
 ## License
 
 This project is open-source and free to use for educational purposes.
-
-```
-
----
-
-If you want, I can also **generate a screenshot folder structure with placeholder images** and **update the README table automatically** so it’s ready to push to GitHub.  
-
-Do you want me to do that next?
-```
