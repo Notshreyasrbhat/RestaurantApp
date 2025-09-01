@@ -15,17 +15,20 @@ public class StartersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        EdgeToEdge.enable(this); // Enables edge-to-edge layout for modern UI
         setContentView(R.layout.activity_starters);
+
+        // Adjusts layout padding so content doesn’t overlap system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         ListView startersList = findViewById(R.id.list_view_starters);
 
-
-        Dish[] dishes={
+        // Array of starter dishes to display in the list
+        Dish[] dishes = {
                 new Dish("Mushroom and tofu maki","Fresh mushrrom and tofu ",99),
                 new Dish("Egg and avocado uramaki","Eggs and avacodo in a broth style dish",299),
                 new Dish("Melon and lemon soup", "Fresh melon and lemon combined into creamy soup", 1199),
@@ -36,11 +39,12 @@ public class StartersActivity extends AppCompatActivity {
                 new Dish("Chickpea and chilli gyoza", "Thin pastry cases stuffed with fresh chickpea and green chilli", 699),
                 new Dish("Sprout and pineapple soup", "Fresh sprout and pineapple combined into creamy soup", 899),
                 new Dish("Egusi and borscht soup", "Egusi and borscht combined into creamy soup", 1299)
-
         };
 
+        // Adapter to bind starter dishes array to the ListView
         ArrayAdapter<Dish> dishesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dishes);
-        startersList.setAdapter(dishesAdapter);
 
+        // Populates the list with starter dish titles
+        startersList.setAdapter(dishesAdapter);
     }
 }

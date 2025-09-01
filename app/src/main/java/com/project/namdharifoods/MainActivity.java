@@ -20,27 +20,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        EdgeToEdge.enable(this); // Enables edge-to-edge layout for modern UI
         setContentView(R.layout.activity_main);
+
+        // Adjusts padding so content doesn’t overlap system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         starterscard=findViewById(R.id.card_view_starters);
         mainscard=findViewById(R.id.card_view_main);
-        starterscard.setOnClickListener(v -> {
 
+        // Opens StartersActivity when starters card is clicked
+        starterscard.setOnClickListener(v -> {
             Intent startersActivityIntent=new Intent(MainActivity.this,StartersActivity.class);
             startActivity(startersActivityIntent);
         });
-        mainscard.setOnClickListener(v -> {
 
+        // Opens MainCoursesActivity when mains card is clicked
+        mainscard.setOnClickListener(v -> {
             Intent mainCoursesActivityIntent=new Intent(MainActivity.this,MainCoursesActivity.class);
             startActivity(mainCoursesActivityIntent);
         });
 
         TextView emailTextView = findViewById(R.id.text_view_email_adresss);
+
+        // Launches email client with predefined email address when clicked
         emailTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +56,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(launchEmailAppIntent);
             }
         });
-
-
     }
 }

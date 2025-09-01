@@ -42,4 +42,8 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="namdaddy">Namdaddy</string>
+    <string name="namdaddy_gmial_com">Namdaddy@gmial.com</string>
+    <string name="starters">Starters</string>
+    <string name="main_courses">Main Courses</string>
 </resources>
